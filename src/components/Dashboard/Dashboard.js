@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { useSearchParams, Navigate } from "react-router-dom"
 import { serverInstance, spotifyInstance } from "../../util/axios"
 import { createMagicPlaylistAndSave, getGenreSeeds, getProfile, magicRecommendation, searchSpotify } from "../../util/helpers"
@@ -59,7 +59,8 @@ const Dashboard = ({cookieState}) => {
     }
     const render = true ?
     <div className="Dashboard">
-        <input onChange={e => querySearchHandler(e)} placeholder="Search Spotify"/>
+        <p>How to use: Search for your favourite artist or song and select upto 5 boxes and click on create playlist</p>
+        <input onChange={e => querySearchHandler(e)} placeholder="Search artists, songs on spotify"/>
         <div className="Search-results">
             {
                 artistSearchResult !== null &&

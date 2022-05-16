@@ -15,6 +15,13 @@ function App() {
             <Route path="/" element={<Landing cookieState={state => setCookieState(state)}/>}/>
             <Route path="/dashboard" element={<Dashboard cookieState={cookieState}/>}/>
           </Routes>
+          <p style={{
+            position: "absolute",
+            bottom: 0,
+            right: 5            
+          }}>
+                Developed by <a href="https://github.com/ved08">Ved</a>, powered by Spotify API
+            </p>
       </div>
   );
 }

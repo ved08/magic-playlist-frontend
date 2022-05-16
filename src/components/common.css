@@ -28,6 +28,12 @@
 .Search-results h2 {
     text-align: left;
 }
+.Selected-items-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .Selected-items {
     display: flex;
 }
@@ -38,7 +44,10 @@
     color: white;
     border: none;
     margin-top: 10px;
-    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
 }
 .Create-playlist-btn:hover {
     cursor: pointer;

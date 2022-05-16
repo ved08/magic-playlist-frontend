@@ -1,16 +1,16 @@
-import axios from "axios"
 import { useEffect, useState } from "react"
 import { Navigate, useSearchParams } from "react-router-dom"
+import { BsSpotify } from "react-icons/bs"
+import { serverInstance } from "../../util/axios"
 const Landing = props => {
     const [searchParams, setSearchParams] = useSearchParams()
-    const [authenticated, setAuthenticated] = useState(false)
 
     useEffect(() => {
         console.log(searchParams.get("code"))
     }, [])
 
     const loginHandler = async () => {
-        axios.get("http://localhost:5000/login").then(res => {
+        serverInstance.get("/login").then(res => {
             const { loginUrl, state } = res.data
             props.cookieState(state)
             window.open(loginUrl, "_self")
@@ -19,8 +19,15 @@ const Landing = props => {
 
     return(
         sessionStorage.getItem("access_token") === null ?
-        <div>
-            <button onClick={loginHandler}>Login</button>
+        <div style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center"
+        }}>
+            <button style={{justifyContent: "space-between"}} className="Create-playlist-btn" onClick={loginHandler}><BsSpotify size={30} style={{
+                float: "left"
+            }}/>Login<div></div></button>
         </div> :
         <Navigate to={"/dashboard"} replace/>
     )
