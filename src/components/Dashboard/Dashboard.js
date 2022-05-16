@@ -51,9 +51,12 @@ const Dashboard = ({cookieState}) => {
             for(let i of res.tracks) {
                 trackUris.push(i.uri)
             }
-            getProfile().then(res => {
+            getProfile().then(async res => {
                 let uid = res.id
-                createMagicPlaylistAndSave(uid, trackUris)
+                const resp = await createMagicPlaylistAndSave(uid, trackUris)
+                if(resp.snapshot_id) {
+                    alert("Saved Playlist. Check your spotify account")
+                }
             })
         })
     }
