@@ -1,0 +1,46 @@
+.Search-Card {
+    display: flex;
+    margin: 2px;
+    background-color: #1DB954;
+    width: 202px;
+    color: white;
+    overflow-wrap: normal;
+    text-decoration: none;
+}
+.Search-Card p {
+    margin-bottom: 0;
+}
+.Search-Card:hover {
+    background-color: #2aa354;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.Search-Card img {
+    border: 0.5px solid black;
+    margin-right: 3px;
+}
+
+.Search-results {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.Search-results h2 {
+    text-align: left;
+}
+.Selected-items {
+    display: flex;
+}
+.Create-playlist-btn {
+    width: 200px;
+    height: 40px;
+    background-color: #1DB954;
+    color: white;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.Create-playlist-btn:hover {
+    cursor: pointer;
+    background-color: #2aa354;
+}
